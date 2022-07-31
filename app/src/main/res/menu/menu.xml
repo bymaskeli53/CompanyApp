@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/overflowMenu"
+        android:icon="@drawable/dicaprio"
+        android:title=""
+        app:showAsAction="always"
+
+        >
+
+        <menu>
+
+
+
+    <item android:id="@+id/edit" android:title="@string/edit"
+            android:icon="@drawable/dicaprio"
+        />
+
+    <item android:id="@+id/define" android:title="@string/define"
+        android:icon="@drawable/dicaprio"
+
+        />
+
+    <item android:id="@+id/delete" android:title="@string/delete"
+        android:icon="@drawable/dicaprio"
+        />
+
+    <item android:id="@+id/report" android:title="@string/reports"
+        android:icon="@drawable/dicaprio"
+        />
+
+        </menu>
+
+    </item>
+
+</menu>

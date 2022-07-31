@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#B21F1F</color>
+    <color name="main1">#A00A17</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#B21F1F</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="blue">#4467AD</color>
+    <color name="blue_light">#D9E4F9</color>
+    <color name="chart_color">#BAEDFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#B21F1F</color>
+    <color name="red_light">#FFCFD2</color>
+    <color name="orange">#F0A33C</color>
+    <color name="orange_light">#E8CFAC</color>
+    <color name="green">#45AA45</color>
+    <color name="green_light">#B1EBB1</color>
+    <color name="gray">#707070</color>
+    <color name="btn_text">#C3C3C3</color>
+    <color name="tab_text">#9D9D9D</color>
+    <color name="progress_tint">#f8f8f8</color>
+    <color name="drawer_selected_item">#56C3C3C3</color>
+    <color name="transparent">#00000000</color>
+    <color name="tab_color">#908b95</color>
+    <color name="gold">#F2BA00</color>
+    <color name="dark_overlay">#B3000000</color>
+    <color name="green_check">#069A00</color>
+    <color name="hint_text">#C3C3C3</color>
+
+</resources>

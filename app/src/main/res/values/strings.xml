@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CompanyApp</string>
+    <string name="member">Member</string>
+    <string name="mgs_software">MGS SOFTWARE</string>
+    <string name="company">Company</string>
+    <string name="bilgisayar_muhendisi">Bilgisayar Mühendisi</string>
+    <string name="Isim">İsim</string>
+    <string name="edit">Edit Company info</string>
+    <string name="define">Define new manager</string>
+    <string name="delete">Delete Company</string>
+    <string name="reports">Reports</string>
+</resources>
