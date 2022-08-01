@@ -1,8 +1,9 @@
-package com.example.companyapp
+package com.example.companyapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.companyapp.model.Member
 import com.example.companyapp.databinding.ItemPersonBinding
 
 class MembersAdapter(private val membersList: List<Member>) : RecyclerView.Adapter<MembersAdapter.MembersViewHolder>() {

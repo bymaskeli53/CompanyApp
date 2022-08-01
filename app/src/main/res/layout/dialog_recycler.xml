@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+   <TextView
+       android:id="@+id/textViewDefineManager"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Define new manager"
+       android:textColor="@color/black"
+       android:layout_gravity="center"
+       android:textSize="32sp"
+       android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/textViewChoose"
+        android:layout_width="wrap_content"
+        android:textColor="@color/btn_text"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="You can choose a new manager for you"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_rv_dialog"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/button_shape"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        app:cornerRadius="24dp"
+        android:text="Define"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

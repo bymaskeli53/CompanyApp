@@ -1,4 +1,4 @@
-package com.example.companyapp
+package com.example.companyapp.model
 
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -11,6 +11,6 @@ data class Member(
     val imageId: Int
 
 ) {
-    // görsel ekleme yapılacak
+
 
 }

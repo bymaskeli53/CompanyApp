@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CompanyApp</string>
-    <string name="member">Member</string>
-    <string name="mgs_software">MGS SOFTWARE</string>
+    <string name="member">%1$d Member</string>
+    <string name="mgs_software">MGS Software</string>
     <string name="company">Company</string>
     <string name="bilgisayar_muhendisi">Bilgisayar Mühendisi</string>
     <string name="Isim">İsim</string>

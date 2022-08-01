@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    >
 
 
     <item
-        android:id="@+id/overflowMenu"
-        android:icon="@drawable/dicaprio"
-        android:title=""
-        app:showAsAction="always"
+        android:id="@+id/define"
+        android:icon="@drawable/arrow_right"
+        android:title="Define New Manager"
+        android:orderInCategory="100" />
 
-        >
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/arrow_right"
+        android:orderInCategory="100"
+        android:title="Edit" />
 
-        <menu>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/arrow_right"
+        android:orderInCategory="100"
+        android:title="delete" />
 
-
-
-    <item android:id="@+id/edit" android:title="@string/edit"
-            android:icon="@drawable/dicaprio"
+    <item
+        android:id="@+id/reports"
+        android:icon="@drawable/arrow_right"
+        android:orderInCategory="100"
+        android:title="report"
         />
 
-    <item android:id="@+id/define" android:title="@string/define"
-        android:icon="@drawable/dicaprio"
 
-        />
 
-    <item android:id="@+id/delete" android:title="@string/delete"
-        android:icon="@drawable/dicaprio"
-        />
 
-    <item android:id="@+id/report" android:title="@string/reports"
-        android:icon="@drawable/dicaprio"
-        />
-
-        </menu>
-
-    </item>
 
 </menu>
