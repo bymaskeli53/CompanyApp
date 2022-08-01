@@ -73,5 +73,37 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         android:src="@drawable/menu" />
 
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textViewMembers"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/textViewMember"
+        android:text="Members"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:layout_constraintStart_toStartOf="@id/line"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="450dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMember"
+        tools:listitem="@layout/item_person" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

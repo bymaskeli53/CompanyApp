@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.companyapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+    //private lateinit var memberList: MutableList<Member>
 
     private lateinit var popupMenu: PopupMenu
 
@@ -20,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         createPopupMenu()
 
         popupMenuClickListener()
+
+        setAdapter()
     }
 
     private fun createPopupMenu() {
@@ -68,6 +73,24 @@ class MainActivity : AppCompatActivity() {
                 popupMenu.show()
             }
             true
+        }
+    }
+
+    private fun setAdapter() {
+       val memberList = mutableListOf<Member>()
+        memberList.add(Member("dfwakdwa","gwagaw",R.drawable.dicaprio))
+        memberList.add(Member("dfwakdwa","gwagaw",R.drawable.dicaprio))
+        memberList.add(Member("dfwakdwa","gwagaw",R.drawable.dicaprio))
+        memberList.add(Member("dfwakdwa","gwagaw",R.drawable.dicaprio))
+        memberList.add(Member("dfwakdwa","gwagaw",R.drawable.dicaprio))
+
+        val rvAdapter = MembersAdapter(memberList)
+
+        val linearLayoutManager = LinearLayoutManager(this)
+
+        binding.recyclerView.apply {
+            layoutManager = linearLayoutManager
+            adapter = rvAdapter
         }
     }
 }
