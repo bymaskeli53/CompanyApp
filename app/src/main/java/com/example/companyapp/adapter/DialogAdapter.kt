@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.companyapp.databinding.ItemRvDialogBinding
 import com.example.companyapp.model.DialogModel
+import kotlin.math.atan
 
-class DialogAdapter(val dialogList: List<DialogModel>) : RecyclerView.Adapter<DialogAdapter.DialogViewHolder>() {
+class DialogAdapter(val dialogList: ArrayList<DialogModel>) : RecyclerView.Adapter<DialogAdapter.DialogViewHolder>() {
 
 
 
@@ -22,7 +23,11 @@ class DialogAdapter(val dialogList: List<DialogModel>) : RecyclerView.Adapter<Di
         holder.binding.checkbox.isChecked = position.checked
         holder.binding.textViewJob.text = position.job
         holder.binding.textViewName.text = position.name
-        holder.binding.roundedImageView.setImageResource(position.resId)
+        position.resId?.let { holder.binding.roundedImageView.setImageResource(it) }
+        holder.binding.checkbox.setOnCheckedChangeListener { compoundButton, b ->
+            position.checked = b
+        }
+
 
     }
 

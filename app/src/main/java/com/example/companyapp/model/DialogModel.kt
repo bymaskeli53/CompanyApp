@@ -1,9 +1,9 @@
 package com.example.companyapp.model
 
 data class DialogModel(
-    val checked: Boolean,
-    val resId: Int,
-    val name: String,
-    val job: String
+    var checked: Boolean = false,
+    val resId: Int? = null,
+    val name: String? = null,
+    val job: String? = null
 ) {
 }

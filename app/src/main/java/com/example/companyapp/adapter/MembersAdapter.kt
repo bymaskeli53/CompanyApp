@@ -1,12 +1,14 @@
 package com.example.companyapp.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.companyapp.model.Member
 import com.example.companyapp.databinding.ItemPersonBinding
+import com.example.companyapp.model.DialogModel
 
-class MembersAdapter(private val membersList: List<Member>) : RecyclerView.Adapter<MembersAdapter.MembersViewHolder>() {
+class MembersAdapter(private val membersList: ArrayList<DialogModel>) : RecyclerView.Adapter<MembersAdapter.MembersViewHolder>() {
 
 
     inner class MembersViewHolder(val binding: ItemPersonBinding) : RecyclerView.ViewHolder(binding.root){
@@ -25,10 +27,19 @@ class MembersAdapter(private val membersList: List<Member>) : RecyclerView.Adapt
 //            }
 //        }
         val position = membersList[position]
+
         holder.binding.apply {
-            textViewJob.text = position.job
-            textViewName.text = position.name
-            roundedImageView.setImageResource(position.imageId)
+            //textViewJob.text = position.job?
+            position.job?.let { textViewJob.text = position.job }
+           // textViewName.text = position.name
+            position.name?.let { textViewName.text = position.name }
+            position.resId?.let { roundedImageView.setImageResource(it) }
+        }
+
+        if (!position.checked){
+            holder.binding.textViewCompanyManager.visibility = View.GONE
+        } else {
+            holder.binding.textViewCompanyManager.visibility = View.VISIBLE
         }
 
     }

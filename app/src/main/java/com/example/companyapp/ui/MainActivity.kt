@@ -3,24 +3,32 @@ package com.example.companyapp.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.companyapp.BottomSheet
 import com.example.companyapp.model.Member
 import com.example.companyapp.R
 import com.example.companyapp.adapter.DialogAdapter
 import com.example.companyapp.adapter.MembersAdapter
 import com.example.companyapp.databinding.ActivityMainBinding
 import com.example.companyapp.model.DialogModel
+import com.example.companyapp.model.DummyData
 import kotlinx.android.synthetic.main.dialog_recycler.view.*
+import kotlinx.android.synthetic.main.item_person.view.*
+import kotlinx.android.synthetic.main.item_rv_dialog.view.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    //private lateinit var memberList: MutableList<Member>
+    private lateinit var memberList: ArrayList<Member>
 
     private lateinit var popupMenu: PopupMenu
+
+    private lateinit var rvAdapter : MembersAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,11 +38,14 @@ class MainActivity : AppCompatActivity() {
         val text = resources.getString(R.string.member, 14)
         binding.textViewMembers.text = text
         createPopupMenu()
+//        val bottomSheet = BottomSheet(this)
+//        bottomSheet.showBottomDialog()
 
         popupMenuClickListener()
 
         setAdapter()
     }
+
 
     private fun createPopupMenu() {
 
@@ -46,22 +57,39 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.define -> {
 
-                    val builder = AlertDialog.Builder(this)
+                    val builder = AlertDialog.Builder(this).create()
                     val customLayout = layoutInflater.inflate(R.layout.dialog_recycler,null)
 
                     builder.setView(customLayout)
 
-                    val dialogList = arrayListOf<DialogModel>()
-                    dialogList.add(DialogModel(false,R.drawable.ben,"Muhammet","Software engineer"))
-                    dialogList.add(DialogModel(false,R.drawable.brad,"brad","actor"))
-                    dialogList.add(DialogModel(false,R.drawable.dicaprio,"dicaprio","actor"))
-                    dialogList.add(DialogModel(false,R.drawable.max,"max","f1 driver"))
-                    val adapter = DialogAdapter(dialogList)
+
+
+                    val adapter = DialogAdapter(DummyData.dialogList)
                     customLayout.rootView.recyclerView.adapter = adapter
 
 
+                    customLayout.rootView.defineButton.setOnClickListener {
+                            //binding.recyclerView.rootView.textViewCompanyManager.visibility = View.VISIBLE
+//                              val layoutInflater = layoutInflater.inflate(R.layout.item_person,null)
+//                              layoutInflater.textViewCompanyManager.visibility = View.VISIBLE
+                        for (index in DummyData.dialogList.indices) {
+                            if (DummyData.dialogList.get(index).checked) {
+                                DummyData.dialogList.get(index)?.checked = true
+                            }
+                        }
 
-                    builder.create().show()
+
+                        builder.dismiss()
+
+                        rvAdapter.notifyDataSetChanged()
+
+
+
+                    }
+
+
+
+                    builder.show()
                     true
                 }
                 R.id.edit -> {
@@ -102,15 +130,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        val memberList = mutableListOf<Member>()
-        memberList.add(Member("Dicaprio", "actor", R.drawable.dicaprio))
-        memberList.add(Member("Brad pitt", "actor", R.drawable.brad))
-        memberList.add(Member("Muhammet", "software engineer", R.drawable.ben))
-        memberList.add(Member("John", "designer", R.drawable.dicaprio))
-        memberList.add(Member("Verstappen", "F1 Driver", R.drawable.max))
 
-        val rvAdapter = MembersAdapter(memberList)
 
+       // memberList.set(0,Member(check = false))
+
+        rvAdapter = MembersAdapter(DummyData.dialogList)
+      //  rvAdapter.notifyDataSetChanged()
         val linearLayoutManager = LinearLayoutManager(this)
 
         binding.recyclerView.apply {
@@ -118,6 +143,11 @@ class MainActivity : AppCompatActivity() {
             adapter = rvAdapter
         }
     }
+
+
+
+
+
 
 
 }

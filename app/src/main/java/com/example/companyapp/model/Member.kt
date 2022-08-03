@@ -6,9 +6,10 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 
 data class Member(
-    val name: String,
-    val job: String,
-    val imageId: Int
+    var name: String? = null,
+    var job: String? = null,
+    var imageId: Int? =  null,
+    var check: Boolean = true
 
 ) {
 

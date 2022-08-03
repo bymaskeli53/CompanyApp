@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-
-    android:paddingBottom="12dp">
+    android:paddingBottom="8dp">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/roundedImageView"
@@ -49,5 +48,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_right" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/textViewCompanyManager"
+        app:layout_constraintTop_toBottomOf="@id/textViewJob"
+        app:layout_constraintStart_toStartOf="@id/textViewJob"
+        android:text="Company Manager"
+        android:textColor="@color/primary"
+
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
