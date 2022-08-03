@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         val text = resources.getString(R.string.member, 14)
         binding.textViewMembers.text = text
         createPopupMenu()
+
 //        val bottomSheet = BottomSheet(this)
 //        bottomSheet.showBottomDialog()
 
@@ -134,7 +135,7 @@ class MainActivity : AppCompatActivity() {
 
        // memberList.set(0,Member(check = false))
 
-        rvAdapter = MembersAdapter(DummyData.dialogList)
+        rvAdapter = MembersAdapter(DummyData.dialogList,this)
       //  rvAdapter.notifyDataSetChanged()
         val linearLayoutManager = LinearLayoutManager(this)
 

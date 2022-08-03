@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.companyapp.databinding.ItemRvDialogBinding
 import com.example.companyapp.model.DialogModel
+import com.example.companyapp.model.Member
 import kotlin.math.atan
 
 class DialogAdapter(val dialogList: ArrayList<DialogModel>) : RecyclerView.Adapter<DialogAdapter.DialogViewHolder>() {
@@ -32,6 +33,8 @@ class DialogAdapter(val dialogList: ArrayList<DialogModel>) : RecyclerView.Adapt
     }
 
     override fun getItemCount() = dialogList.size
+
+
 
 
 }

@@ -6,26 +6,31 @@
     android:orientation="vertical">
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/dicaprio"
         app:riv_oval="true"
+
         android:layout_marginTop="20dp"
 
         />
 
     <TextView
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:text="Leonardo Dicaprio"
+        android:fontFamily="@font/anton"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
         />
 
     <TextView
+        android:id="@+id/textViewJob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,11 +41,12 @@
         android:textSize="32sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/closeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"
-        android:text="Add"
+        android:text="Close"
         android:backgroundTint="@color/primary"
 
         android:textAllCaps="false"
